@@ -1,0 +1,44 @@
+<!-- <p>crashcar works!</p> -->
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date  to Filter the data</mat-label>
+    <input matInput [matDatepicker]="picker" (dateChange)="DateChange($event)">
+    <mat-datepicker  #picker ></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+  <!-- <button mat-raised-button (click)="">Apply</button> -->
+
+<div style="padding: 30px; " >
+    <mat-grid-list cols="4" rowHeight="1:1" gutterSize = "30px">
+       
+        <mat-grid-tile class="zoom" *ngFor="let item of crashdetails" style="background:rgb(237 226 255); border-radius: 15%;">
+           <div class="row" style="justify-content: center;text-align: center;">
+            <!-- <div class="row col-md-12" style="justify-content: center;">
+                <img src="https://lh3.googleusercontent.com/lm7pvD6G05vQ7FBEEjJWYPSJtakMOtxdxb350TkKmMA0E3bPYiejAqFMNrGZrFDoRQ" style="height: 155px; width: auto;" alt="">
+            </div> -->
+            <div class="col-md-12 row" style="margin-top: 10px;margin-left: 10px;">
+                <div class="col-md-6"  style="text-align: center;">
+                     {{item.vehicle_type_code1}} 
+                </div>
+                <div class="col-md-6"  style="text-align: center;;">
+                    <!-- <mat-icon matTooltip="Author" style="color: rgb(61 68 70);" >  camera_alt</mat-icon> -->
+                {{item.vehicle_type_code2}} 
+                </div>
+            </div>
+            <div class="col-md-12 row" style="margin-top: 10px;margin-left: 10px;">
+                <div class="col-md-6"  style="text-align: center;">
+                     {{item.crash_date}} 
+                </div>
+                <div class="col-md-6"  style="text-align: center;;">
+                    <!-- <mat-icon matTooltip="Author" style="color: rgb(61 68 70);" >  camera_alt</mat-icon> -->
+                {{item.crash_time}} 
+                </div>
+            </div>
+
+          
+           
+           
+          
+           </div>
+        </mat-grid-tile>
+  </mat-grid-list>
+</div>
